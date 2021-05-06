@@ -12,6 +12,7 @@ To run the container, go to the project root folder where the docker-compose.yml
 ```bash
 docker-compose up -d
 ```
+Chek if both grafana and mysql container are running by running `docker ps`.
 
 You can check that both the database and the table were created on start :
 ```bash
