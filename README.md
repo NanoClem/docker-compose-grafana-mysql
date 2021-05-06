@@ -23,6 +23,6 @@ mysql> show tables;
 
 ## Access to Grafana
 
-Grafana is running on http://localhost:3000 by default as defined in the docker compose file.  
-Both default user and password are **"admin"**.  
+* Grafana is running on http://localhost:3000 by default as defined in the docker compose file.  
+* Both default user and password are **"admin"**.  
 **WARNING WHEN ENTERING HOST FOR MYSQL CONNECTOR** : you will probably have to enter the docker host ip address instead of localhost.
