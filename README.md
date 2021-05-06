@@ -15,7 +15,7 @@ docker-compose up -d
 Chek if both grafana and mysql container are running by running `docker ps`.  
 
 
-You can check that both the database and the table were created on start :
+You can check that both the database and tables were created on start :
 ```bash
 docker exec -it mysql_grafana mysql -u root -p secret sensorDB
 mysql> show tables;
