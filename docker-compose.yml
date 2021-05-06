@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana_LRE
+    networks:
+      - web
+    volumes:
+      - data_grafana:/var/lib/grafana
+    ports:
+      - 3000:3000
+
+  mysql:
+    image: mysql:8
+    container_name: mysql_grafana
+    networks:
+      - web
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./init.sql:/data/application/init.sql
+      - mysql_grafana:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_USER=clem
+      - MYSQL_PASSWORD=test
+      - MYSQL_DATABASE=testGrafana
+    ports:
+      - 3307:3306
+
+volumes:
+  mysql_grafana:
+  data_grafana:
+
+networks:
+  web:
+    driver: bridge
